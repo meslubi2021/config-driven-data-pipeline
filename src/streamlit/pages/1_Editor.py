@@ -698,9 +698,9 @@ with vis_view:
                                 selected_y_axis_index = 1 if len(cols) > 1 else 0
 
                                 for j in range(len(cols)):
-                                    if cols[j] == current_pipeline_obj['visualization'][i]['x_axis']:
+                                    if 'x_axis' in current_pipeline_obj['visualization'] and cols[j] == current_pipeline_obj['visualization'][i]['x_axis']:
                                         selected_x_axis_index = j
-                                    if cols[j] == current_pipeline_obj['visualization'][i]['y_axis']:
+                                    if 'y_axis' in current_pipeline_obj['visualization'] and cols[j] == current_pipeline_obj['visualization'][i]['y_axis']:
                                         selected_y_axis_index = j
 
                                 x_axis = st.selectbox('X Axis', cols, key=f'vis_x_axis_{i}', index=selected_x_axis_index)
